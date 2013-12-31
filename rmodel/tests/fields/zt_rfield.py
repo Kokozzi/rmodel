@@ -19,3 +19,12 @@ class RfieldTest(BaseTest):
     def test_incr(self):
         self.model.field -= 10
         self.eq(self.model.field.get(), -10)
+
+    def test_default_int(self):
+        self.unbound2 = rfield(int, 10)
+        self.unbound2.bound(self.model, 'field2')
+        self.eq(self.model.field2.get(), 10)
+        self.model.field2 += 10
+        self.eq(self.model.field2.get(), 20)
+        self.model.field2 -= 12
+        self.eq(self.model.field2.get(), 8)
