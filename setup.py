@@ -10,10 +10,10 @@ setup(name='rmodel',
       packages=['rmodel', 'rmodel.fields', 'rmodel.models', 'rmodel.sessions'],
       package_dir={'rmodel': 'rmodel'},
       dependency_links=[
-          "http://github.com/dsociative/ztest/tarball/master#egg=ztest-0.0.0",
+          
       ],
       install_requires=[
           'redis',
-          'ztest'
+          
       ]
 )
